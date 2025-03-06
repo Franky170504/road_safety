@@ -1,0 +1,8 @@
+path: C:\Laukik\final_dataset\dataset # dataset path
+
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 3
+names: ['Helmet', 'No-Helmet', 'plate']
