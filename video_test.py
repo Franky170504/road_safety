@@ -2,12 +2,12 @@ import cv2
 from ultralytics import YOLO
 
 # Load YOLOv8 model
-model = YOLO("C:/Laukik/final_dataset/results/helmet_plate/weights/best.pt")  # Update with your model path
+model = YOLO("results/helmet_plate/weights/best.pt")  # Update with your model path
 # model = YOLO(r"D:\YOLO_Training\helmet_plate\weights\best.pt")
 
 
 # Load video file
-video_path = "final.mp4"  # Replace with the path to your test video
+video_path = "om-7march.mp4"  # Replace with the path to your test video
 cap = cv2.VideoCapture(video_path)
 
 # Get video properties
