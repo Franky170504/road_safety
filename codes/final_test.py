@@ -38,7 +38,7 @@ LICENSE_PLATE_PATTERN = re.compile(r'[A-Z0-9]{4,10}')
 OCR_CONFIDENCE_THRESHOLD = 0.4
 
 # Open video file
-video_path = r'videos/om-7march.mp4'
+video_path = r'videos/v3.mp4'
 cap = cv2.VideoCapture(video_path)
 
 if not cap.isOpened():
@@ -230,8 +230,6 @@ while cap.isOpened():
                 f.write(f"Timestamp: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
                 f.write(f"License Plate: {plate_text}\n")
                 f.write(f"OCR Confidence: {max_confidence:.2f}\n")
-                f.write(f"Frame: {frame_counter} / {frame_count}\n")
-                f.write(f"Video Source: {video_path}\n")
             
             print(f"Violation saved: {violation_folder} | Plate: {plate_text} | Conf: {max_confidence:.2f}")
             
@@ -240,12 +238,12 @@ while cap.isOpened():
             recorded_violations[track_id] = plate_text
 
     # Calculate and display FPS
-    if frame_counter % 30 == 0:
-        current_time = time.time()
-        fps_current = 30 / (current_time - last_time)
-        last_time = current_time
-        cv2.putText(frame, f"FPS: {fps_current:.1f}", (10, 30), 
-                  cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 255, 0), 2)
+    # if frame_counter % 30 == 0:
+    #     current_time = time.time()
+    #     fps_current = 30 / (current_time - last_time)
+    #     last_time = current_time
+    #     cv2.putText(frame, f"FPS: {fps_current:.1f}", (10, 30), 
+    #               cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 255, 0), 2)
 
     # Display frame
     cv2.imshow("Helmet Detection + Number Plate OCR", frame)
