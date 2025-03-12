@@ -38,7 +38,7 @@ LICENSE_PLATE_PATTERN = re.compile(r'[A-Z0-9]{4,10}')
 OCR_CONFIDENCE_THRESHOLD = 0.4
 
 # Open video file
-video_path = r'videos/om-7march.mp4'
+video_path = r'videos/v3.mp4'
 cap = cv2.VideoCapture(video_path)
 
 if not cap.isOpened():
