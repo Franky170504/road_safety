@@ -9,7 +9,7 @@ import re
 import time
 
 # Load YOLO model
-model = YOLO("best.pt")
+model = YOLO(r'models\best.pt')
 
 # Initialize EasyOCR with multiple languages and allow lists
 ocr = easyocr.Reader(['en'], gpu=True if cv2.cuda.getCudaEnabledDeviceCount() > 0 else False)
@@ -38,7 +38,7 @@ LICENSE_PLATE_PATTERN = re.compile(r'[A-Z0-9]{4,10}')
 OCR_CONFIDENCE_THRESHOLD = 0.4
 
 # Open video file
-video_path = r'videos/v3.mp4'
+video_path = 0
 cap = cv2.VideoCapture(video_path)
 
 if not cap.isOpened():
